@@ -1,0 +1,11 @@
+.body {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 8px
+}
+
+.title.completed {
+	text-decoration: line-through;
+	color: grey
+}
