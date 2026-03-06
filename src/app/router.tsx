@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router"
 
-import { TaskPage } from "pages/index"
+import { TaskPage } from "pages/tasks"
 
 export function AppRoutes() {
   return (
