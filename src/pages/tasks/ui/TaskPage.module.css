@@ -1,0 +1,11 @@
+.root {
+	display: flex;
+	flex-direction: column;
+	max-width: 1200px;
+	width: 900px;
+	height: 100vh;
+}
+
+.header {
+	text-align: center;
+}
