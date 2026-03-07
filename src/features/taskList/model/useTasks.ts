@@ -1,9 +1,8 @@
 import { useCallback, useMemo, useState } from "react"
 
 import { type Task } from "entities/taskCard"
+import type { Filter } from "entities/taskFilter"
 import { unionGuard } from "shared/lib/typescriptHelpers"
-
-export type Filter = "all" | "completed" | "incomplete"
 
 type UseTasksType = {
   tasks: Task[]
