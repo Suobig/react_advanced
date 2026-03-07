@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useCallback, useState } from "react"
 
 import { type Task } from "entities/taskCard"
 import { unionGuard } from "shared/lib/typescriptHelpers"
@@ -18,11 +18,11 @@ export function useTasks(initial: Task[]): UseTasksType {
   const [tasks, setTasks] = useState<Task[]>(initial)
   const [filter, setFilter] = useState<Filter>("all")
 
-  function removeTask(id: string): void {
+  const removeTask = useCallback((id: string) => {
     setTasks((prevState) => prevState.filter((el) => el.id !== id))
-  }
+  }, [])
 
-  function toggleTask(id: string): void {
+  const toggleTask = useCallback((id: string) => {
     setTasks((prevState) =>
       prevState.map((task) => {
         if (task.id !== id) {
@@ -35,7 +35,7 @@ export function useTasks(initial: Task[]): UseTasksType {
         }
       }),
     )
-  }
+  }, [])
 
   const filteredTasks = getFilteredTasks(tasks, filter)
 
