@@ -1,6 +1,7 @@
 import { ToggleButtonGroup } from "@mui/material"
-import s from "./TaskFilters.module.css"
 import { FilterButton } from "shared/ui/FilterButton/FilterButton"
+
+import s from "./TaskFilters.module.css"
 
 type FilterConfig<T> = { value: T; label: string }
 
@@ -18,10 +19,7 @@ export function TaskFilters<T extends string>(props: TaskFiltersProps<T>) {
       className={s.root}
       value={filter}
       exclusive
-      onChange={(_, newValue) => {
-        console.log({ newValue })
-        return onChange(newValue)
-      }}
+      onChange={(_, newValue) => onChange(newValue)}
     >
       {filters.map(({ value, label }) => (
         <FilterButton value={value} label={label} />
