@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react"
+import { useCallback, useMemo, useState } from "react"
 
 import { type Task } from "entities/taskCard"
 import { unionGuard } from "shared/lib/typescriptHelpers"
@@ -37,7 +37,10 @@ export function useTasks(initial: Task[]): UseTasksType {
     )
   }, [])
 
-  const filteredTasks = getFilteredTasks(tasks, filter)
+  const filteredTasks = useMemo(
+    () => getFilteredTasks(tasks, filter),
+    [tasks, filter],
+  )
 
   return { tasks, filter, setFilter, filteredTasks, removeTask, toggleTask }
 }
