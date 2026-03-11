@@ -1,3 +1,4 @@
+import React from "react"
 import cn from "classnames"
 import { Checkbox, FormControlLabel, IconButton } from "@mui/material"
 import { Delete } from "@mui/icons-material"
@@ -12,8 +13,7 @@ interface TaskCardProps {
   onChange: (id: string) => void
 }
 
-
-export function TaskCard(props: TaskCardProps) {
+function TaskCardComponent(props: TaskCardProps) {
   const { task, onDelete, onChange } = props
 
   return (
@@ -22,15 +22,16 @@ export function TaskCard(props: TaskCardProps) {
         <FormControlLabel
           className={cn(s.title, { [s.completed]: task.completed })}
           control={
-            <Checkbox name={task.id} checked={task.completed} onChange={() => onChange(task.id)} />
+            <Checkbox
+              name={task.id}
+              checked={task.completed}
+              onChange={() => onChange(task.id)}
+            />
           }
           label={task.title}
         />
         <div className={s.controls}>
-          <IconButton
-            aria-label="delete"
-            onClick={() => onDelete(task.id)}
-          >
+          <IconButton aria-label="delete" onClick={() => onDelete(task.id)}>
             <Delete />
           </IconButton>
         </div>
@@ -38,3 +39,5 @@ export function TaskCard(props: TaskCardProps) {
     </div>
   )
 }
+
+export const TaskCard = React.memo(TaskCardComponent)

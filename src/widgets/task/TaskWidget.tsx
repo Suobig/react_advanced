@@ -1,6 +1,7 @@
-import type { Task } from "entities/taskCard"
-import { TaskList, useTasks, type Filter } from "features/taskList"
+import { TaskList, useTasks } from "features/taskList"
 import { TaskFilters } from "features/taskFilters/ui/TaskFilters"
+import type { Task } from "entities/taskCard"
+import type { Filter } from "entities/taskFilter"
 
 import s from "./TaskWidget.module.css"
 
@@ -27,18 +28,12 @@ export function TaskWidget() {
   const { filter, setFilter, filteredTasks, removeTask, toggleTask } =
     useTasks(INITIAL_TASKS)
 
-  function handleChangeFilter(newFilter: Filter | null): void {
-    if (newFilter !== null) {
-      setFilter(newFilter)
-    }
-  }
-
   return (
     <div className={s.root}>
       <TaskFilters
         filters={FILTER_CONFIG}
         filter={filter}
-        onChange={handleChangeFilter}
+        onChange={setFilter}
       />
       <TaskList
         className={s.list}
