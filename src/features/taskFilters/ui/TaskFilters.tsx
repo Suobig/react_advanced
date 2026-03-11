@@ -17,7 +17,7 @@ interface TaskFiltersProps {
 function TaskFiltersComponent(props: TaskFiltersProps) {
   const { filters, filter, onChange } = props
 
-  //Нужен отдельный обработчик: т.е. MUI ToggleButtonGroup позволяет
+  //Нужен отдельный обработчик: т.к. MUI ToggleButtonGroup позволяет передавать null
   const handleChange = useCallback(
     (_: unknown, newFilter: Filter | null) => {
       if (newFilter !== null) {
@@ -35,7 +35,7 @@ function TaskFiltersComponent(props: TaskFiltersProps) {
       onChange={handleChange}
     >
       {filters.map(({ value, label }) => (
-        <FilterButton value={value} label={label} />
+        <FilterButton key={value} value={value} label={label} />
       ))}
     </ToggleButtonGroup>
   )
