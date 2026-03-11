@@ -1,22 +1,12 @@
+import { useMemo } from "react"
+import { Alert, CircularProgress } from "@mui/material"
+
 import { TaskList, useTasks } from "features/taskList"
 import { TaskFilters } from "features/taskFilters/ui/TaskFilters"
-import type { Task } from "entities/taskCard"
 import type { Filter } from "entities/taskFilter"
+import { useGetTasksQuery } from "entities/taskCard/api/taskApi"
 
 import s from "./TaskWidget.module.css"
-
-const INITIAL_TASKS: Task[] = [
-  { id: "1", title: "Архитектура: вебинар", completed: true },
-  {
-    id: "2",
-    title: "Архитектура React приложений: практика",
-    completed: false,
-  },
-  { id: "3", title: "Оптимизация: вебинар", completed: true },
-  { id: "4", title: "Оптимизация: практика", completed: false },
-  { id: "5", title: "Redux: вебинар", completed: true },
-  { id: "6", title: "Redux: практика", completed: false },
-]
 
 const FILTER_CONFIG: { value: Filter; label: string }[] = [
   { value: "all", label: "Все" },
@@ -25,8 +15,26 @@ const FILTER_CONFIG: { value: Filter; label: string }[] = [
 ]
 
 export function TaskWidget() {
+  const { data: fetchedTasks, isLoading, error } = useGetTasksQuery()
+
+  const tasks = useMemo(() => {
+    if (!fetchedTasks) {
+      return []
+    } else {
+      return fetchedTasks
+    }
+  }, [fetchedTasks])
+
   const { filter, setFilter, filteredTasks, removeTask, toggleTask } =
-    useTasks(INITIAL_TASKS)
+    useTasks(tasks)
+
+  if (isLoading) {
+    return <CircularProgress className={s.loader} size="60px" />
+  }
+
+  if (error) {
+    return <Alert severity="error">Error loading tasks</Alert>
+  }
 
   return (
     <div className={s.root}>
