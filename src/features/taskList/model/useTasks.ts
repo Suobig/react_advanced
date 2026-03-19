@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useState } from "react"
+import { useCallback, useEffect, useMemo, useState } from "react"
 
 import { type Task } from "entities/taskCard"
 import type { Filter } from "entities/taskFilter"
@@ -14,8 +14,12 @@ type UseTasksType = {
 }
 
 export function useTasks(initial: Task[]): UseTasksType {
-  const [tasks, setTasks] = useState<Task[]>(initial)
+  const [tasks, setTasks] = useState<Task[]>([])
   const [filter, setFilter] = useState<Filter>("all")
+
+  useEffect(() => {
+    setTasks(initial)
+  }, [initial])
 
   const removeTask = useCallback((id: string) => {
     setTasks((prevState) => prevState.filter((el) => el.id !== id))

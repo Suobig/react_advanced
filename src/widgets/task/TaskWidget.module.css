@@ -1,3 +1,8 @@
 .list {
 	margin-top: 24px;
 }
+
+.loader {
+	margin-top: 40px;
+	align-self: center;
+}
