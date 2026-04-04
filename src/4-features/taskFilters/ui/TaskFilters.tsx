@@ -1,7 +1,7 @@
 import React, { useCallback } from "react"
 import { ToggleButtonGroup } from "@mui/material"
 
-import type { Filter } from "entities/taskFilter"
+import type { Filter } from "5-entities/taskFilter"
 import { FilterButton } from "shared/ui/FilterButton/FilterButton"
 
 import s from "./TaskFilters.module.css"

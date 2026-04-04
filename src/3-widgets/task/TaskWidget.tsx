@@ -1,10 +1,10 @@
 import { useMemo } from "react"
 import { Alert, CircularProgress } from "@mui/material"
 
-import { TaskList, useTasks } from "features/taskList"
-import { TaskFilters } from "features/taskFilters/ui/TaskFilters"
-import type { Filter } from "entities/taskFilter"
-import { useGetTasksQuery } from "entities/taskCard/api/taskApi"
+import { TaskList, useTasks } from "4-features/taskList"
+import { TaskFilters } from "4-features/taskFilters/ui/TaskFilters"
+import type { Filter } from "5-entities/taskFilter"
+import { useGetTasksQuery } from "5-entities/taskCard/api/taskApi"
 
 import s from "./TaskWidget.module.css"
 

@@ -1,4 +1,4 @@
-import { TaskWidget } from "widgets"
+import { TaskWidget } from "3-widgets"
 
 import s from "./TaskPage.module.css"
 

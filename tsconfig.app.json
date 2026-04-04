@@ -26,12 +26,12 @@
 
     "baseUrl": "src",
     "paths": {
-      "shared/*": ["shared/*"],
-      "entities/*": ["entities/*"],
-      "features/*": ["features/*"],
-      "widgets/*": ["widgets/*"],
-      "pages/*": ["pages/*"],
-      "app/*": ["app/*"]
+      "shared/*": ["6-shared/*"],
+      "entities/*": ["5-entities/*"],
+      "features/*": ["4-features/*"],
+      "widgets/*": ["3-widgets/*"],
+      "pages/*": ["2-pages/*"],
+      "app/*": ["1-app/*"]
     }
   },
   "include": ["src"]
