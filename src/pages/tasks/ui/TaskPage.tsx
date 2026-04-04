@@ -1,5 +1,4 @@
-
-import { TaskWidget } from "widgets/task/TaskWidget"
+import { TaskWidget } from "widgets"
 
 import s from "./TaskPage.module.css"
 
