@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from "react"
 
-import { type Task } from "5-entities/taskCard"
-import type { Filter } from "5-entities/taskFilter"
+import { type Task } from "entities/taskCard"
+import type { Filter } from "entities/taskFilter"
 import { unionGuard } from "shared/lib/typescriptHelpers"
 
 type UseTasksType = {

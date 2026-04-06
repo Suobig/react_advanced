@@ -1,4 +1,4 @@
-import { type Task, TaskCard } from "5-entities/taskCard"
+import { type Task, TaskCard } from "entities/taskCard"
 
 interface TaskListProps {
   className: string

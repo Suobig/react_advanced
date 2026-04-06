@@ -23,15 +23,13 @@
     "erasableSyntaxOnly": true,
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true,
-
-    "baseUrl": "src",
     "paths": {
-      "shared/*": ["6-shared/*"],
-      "entities/*": ["5-entities/*"],
-      "features/*": ["4-features/*"],
-      "widgets/*": ["3-widgets/*"],
-      "pages/*": ["2-pages/*"],
-      "app/*": ["1-app/*"]
+      "shared/*": ["./src/6-shared/*"],
+      "entities/*": ["./src/5-entities/*"],
+      "features/*": ["./src/4-features/*"],
+      "widgets/*": ["./src/3-widgets/*"],
+      "pages/*": ["./src/2-pages/*"],
+      "app/*": ["./src/1-app/*"]
     }
   },
   "include": ["src"]

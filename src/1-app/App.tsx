@@ -1,5 +1,5 @@
 import { AppRoutes } from "./router"
-import { Header } from "3-widgets"
+import { Header } from "widgets/header/Header"
 
 import s from "./App.module.css"
 

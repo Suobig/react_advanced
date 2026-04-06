@@ -1,7 +1,7 @@
 import { Route, Routes } from "react-router"
 
-import { TaskPage } from "2-pages/tasks"
-import { RegisterPage } from "2-pages/register"
+import { TaskPage } from "pages/tasks"
+import { RegisterPage } from "pages/register"
 
 export function AppRoutes() {
   return (
