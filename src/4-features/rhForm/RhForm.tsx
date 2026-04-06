@@ -6,8 +6,9 @@ import { createInitialValues } from "./model/initialValues"
 import { type FormValues } from "./model/types"
 import { validationSchema } from "./model/validator"
 import { useNavigate } from "react-router"
-import { Box, Button, Container, Typography } from "@mui/material"
+import { Box, Button, Container, Divider, Typography } from "@mui/material"
 import { UserName, Email, Password, PasswordConfirmation } from "./ui"
+import { Socials } from "./ui/Socials"
 
 export const RhfForm = () => {
   const navigate = useNavigate()
@@ -47,6 +48,8 @@ export const RhfForm = () => {
           <Email />
           <Password />
           <PasswordConfirmation />
+          <Divider variant="middle" sx={{ mb: 2 }} />
+          <Socials />
 
           <Box sx={{ display: "flex", justifyContent: "center" }}>
             <Button

@@ -11,6 +11,13 @@ export const validationSchema = z
       .email({ error: "Невалидный email" }),
     password: z.string().min(6, "Пароль должен быть не менее 6 символов"),
     confirmPassword: z.string().nonempty(NON_EMPTY_MESSAGE),
+    social: z
+      .array(
+        z.object({
+          value: z.string().nonempty(NON_EMPTY_MESSAGE),
+        }),
+      )
+      .min(1, "Добавьте хотя бы одну ссылку"),
   })
   .superRefine((data, ctx) => {
     if (data.password !== data.confirmPassword) {

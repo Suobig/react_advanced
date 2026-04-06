@@ -6,5 +6,6 @@ export function createInitialValues(values?: FormValues): FormValues {
     email: values?.email ?? "",
     password: values?.password ?? "",
     confirmPassword: values?.confirmPassword ?? "",
+    social: values?.social ?? [],
   }
 }
