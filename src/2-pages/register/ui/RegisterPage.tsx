@@ -1,4 +1,4 @@
-import { RegisterForm } from "features/rhForm/RegisterForm"
+import { RegisterForm } from "features/registerForm/RegisterForm"
 
 import s from "./RegisterPage.module.css"
 
