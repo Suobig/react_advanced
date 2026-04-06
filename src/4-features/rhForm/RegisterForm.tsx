@@ -10,7 +10,7 @@ import { Box, Button, Container, Divider, Typography } from "@mui/material"
 import { UserName, Email, Password, PasswordConfirmation } from "./ui"
 import { Socials } from "./ui/Socials"
 
-export const RhfForm = () => {
+export const RegisterForm = () => {
   const navigate = useNavigate()
 
   const initialValues = useMemo(() => createInitialValues(), [])

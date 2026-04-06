@@ -14,7 +14,7 @@ export const validationSchema = z
     social: z
       .array(
         z.object({
-          value: z.string().nonempty(NON_EMPTY_MESSAGE),
+          value: z.url("Некорректный URL").nonempty(NON_EMPTY_MESSAGE),
         }),
       )
       .min(1, "Добавьте хотя бы одну ссылку"),

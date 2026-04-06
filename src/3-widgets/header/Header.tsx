@@ -12,7 +12,7 @@ export const Header = () => {
         </Link>
         <Box component="nav" sx={{ ml: "auto" }}>
           <Link component={NavLink} to="auth" variant="button">
-            <Typography>Войти</Typography>
+            <Typography>Регистрация</Typography>
           </Link>
         </Box>
       </Toolbar>
