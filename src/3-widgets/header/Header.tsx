@@ -4,10 +4,15 @@ import { NavLink } from "react-router"
 export const Header = () => {
   return (
     <AppBar position="static" color="default" elevation={0}>
-      <Toolbar>
+      <Toolbar sx={{ gap: 2 }}>
         <Link component={NavLink} to="/" variant="button">
           <Typography variant="h6" component="h6">
             Home
+          </Typography>
+        </Link>
+        <Link component={NavLink} to="refs" variant="button">
+          <Typography variant="h6" component="h6">
+            Refs
           </Typography>
         </Link>
         <Box component="nav" sx={{ ml: "auto" }}>
